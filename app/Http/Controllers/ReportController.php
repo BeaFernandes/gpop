@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pop;
+use App\Models\Record;
 use Illuminate\Http\Request;
 
-class PopController extends Controller
+class ReportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class PopController extends Controller
      */
     public function index()
     {
-        return view('pop.list', ['pop', Pop::all()]);
+        //
     }
 
     /**
@@ -41,21 +41,21 @@ class PopController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Pop  $pop
+     * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function show(Pop $pop)
+    public function show(Record $record)
     {
-        return view();
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Pop  $pop
+     * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pop $pop)
+    public function edit(Record $record)
     {
         //
     }
@@ -64,10 +64,10 @@ class PopController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Pop  $pop
+     * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pop $pop)
+    public function update(Request $request, Record $record)
     {
         //
     }
@@ -75,10 +75,10 @@ class PopController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Pop  $pop
+     * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pop $pop)
+    public function destroy(Record $record)
     {
         //
     }

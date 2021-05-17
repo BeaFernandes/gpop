@@ -16,4 +16,10 @@ class Pop extends Model
         'image',
         'categories_id',
     ];
+
+    public static function all()
+    {
+        return Pop::all();
+    }
+    
 }
