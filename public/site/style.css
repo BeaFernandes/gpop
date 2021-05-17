@@ -31,6 +31,7 @@
   --bs-highlight-6: #a6ce28;
   --bs-link: #007bb9;
   --bs-active: #003b58;
+  --bs-disabled: #757b89;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
@@ -3305,6 +3306,36 @@ textarea.form-control-lg {
   border-color: #003b58;
 }
 
+.btn-disabled {
+  color: #000;
+  background-color: #757b89;
+  border-color: #757b89;
+}
+.btn-disabled:hover {
+  color: #000;
+  background-color: #8a8f9b;
+  border-color: #838895;
+}
+.btn-check:focus + .btn-disabled, .btn-disabled:focus {
+  color: #000;
+  background-color: #8a8f9b;
+  border-color: #838895;
+  box-shadow: 0 0 0 0.25rem rgba(99, 105, 116, 0.5);
+}
+.btn-check:checked + .btn-disabled, .btn-check:active + .btn-disabled, .btn-disabled:active, .btn-disabled.active, .show > .btn-disabled.dropdown-toggle {
+  color: #000;
+  background-color: #9195a1;
+  border-color: #838895;
+}
+.btn-check:checked + .btn-disabled:focus, .btn-check:active + .btn-disabled:focus, .btn-disabled:active:focus, .btn-disabled.active:focus, .show > .btn-disabled.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem rgba(99, 105, 116, 0.5);
+}
+.btn-disabled:disabled, .btn-disabled.disabled {
+  color: #000;
+  background-color: #757b89;
+  border-color: #757b89;
+}
+
 .btn-outline-text-bg-1 {
   color: #3a3f50;
   border-color: #3a3f50;
@@ -3602,6 +3633,31 @@ textarea.form-control-lg {
 }
 .btn-outline-active:disabled, .btn-outline-active.disabled {
   color: #003b58;
+  background-color: transparent;
+}
+
+.btn-outline-disabled {
+  color: #757b89;
+  border-color: #757b89;
+}
+.btn-outline-disabled:hover {
+  color: #000;
+  background-color: #757b89;
+  border-color: #757b89;
+}
+.btn-check:focus + .btn-outline-disabled, .btn-outline-disabled:focus {
+  box-shadow: 0 0 0 0.25rem rgba(117, 123, 137, 0.5);
+}
+.btn-check:checked + .btn-outline-disabled, .btn-check:active + .btn-outline-disabled, .btn-outline-disabled:active, .btn-outline-disabled.active, .btn-outline-disabled.dropdown-toggle.show {
+  color: #000;
+  background-color: #757b89;
+  border-color: #757b89;
+}
+.btn-check:checked + .btn-outline-disabled:focus, .btn-check:active + .btn-outline-disabled:focus, .btn-outline-disabled:active:focus, .btn-outline-disabled.active:focus, .btn-outline-disabled.dropdown-toggle.show:focus {
+  box-shadow: 0 0 0 0.25rem rgba(117, 123, 137, 0.5);
+}
+.btn-outline-disabled:disabled, .btn-outline-disabled.disabled {
+  color: #757b89;
   background-color: transparent;
 }
 
@@ -5007,6 +5063,15 @@ textarea.form-control-lg {
   color: #001c2a;
 }
 
+.alert-disabled {
+  color: #464a52;
+  background-color: #e3e5e7;
+  border-color: #d6d7dc;
+}
+.alert-disabled .alert-link {
+  color: #383b42;
+}
+
 @-webkit-keyframes progress-bar-stripes {
   0% {
     background-position-x: 1rem;
@@ -5448,6 +5513,20 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #002335;
   border-color: #002335;
+}
+
+.list-group-item-disabled {
+  color: #464a52;
+  background-color: #e3e5e7;
+}
+.list-group-item-disabled.list-group-item-action:hover, .list-group-item-disabled.list-group-item-action:focus {
+  color: #464a52;
+  background-color: #ccced0;
+}
+.list-group-item-disabled.list-group-item-action.active {
+  color: #fff;
+  background-color: #464a52;
+  border-color: #464a52;
 }
 
 .btn-close {
@@ -6495,6 +6574,13 @@ textarea.form-control-lg {
   color: #002f46;
 }
 
+.link-disabled {
+  color: #757b89;
+}
+.link-disabled:hover, .link-disabled:focus {
+  color: #9195a1;
+}
+
 .ratio {
   position: relative;
   width: 100%;
@@ -6888,6 +6974,10 @@ textarea.form-control-lg {
 
 .border-active {
   border-color: #003b58 !important;
+}
+
+.border-disabled {
+  border-color: #757b89 !important;
 }
 
 .border-white {
@@ -7735,6 +7825,10 @@ textarea.form-control-lg {
   color: #003b58 !important;
 }
 
+.text-disabled {
+  color: #757b89 !important;
+}
+
 .text-white {
   color: #fff !important;
 }
@@ -7805,6 +7899,10 @@ textarea.form-control-lg {
 
 .bg-active {
   background-color: #003b58 !important;
+}
+
+.bg-disabled {
+  background-color: #757b89 !important;
 }
 
 .bg-body {

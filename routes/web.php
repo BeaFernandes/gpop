@@ -16,3 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard', ['title' => 'Dashboard']);
 });
+
+Route::post('/pop', function () {
+    return view('save');
+});
+Route::get('/pop.create', function () {
+    return view('pop/create', ['title' => 'Novo POP']);
+});
+
+
+
+
+Route::get('/util.navbar', function () {
+    return view('util/navbar');
+});
+
+Route::get('/util.head', function () {
+    return view('util/head');
+});
