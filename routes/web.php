@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('dashboard', ['title' => 'Dashboard']);}); // 'RaizController@index'
 
+Auth::routes();
 
 Route::get('/login', function () {return view('login/create', ['title' => 'Login']);}); // 'LoginController@create'
 Route::post('/login', 'LoginController@store');
@@ -28,12 +29,12 @@ Route::patch('/pop/{id}', 'PopController@update');
 Route::delete('/pop/{id}', 'PopController@destroy');
 
 
-Route::post('/user', 'UserController@store');
+Route::post('/user', 'App\Http\Controllers\RegisterController@store')->name('register');
 Route::get('/user', function () {return view('user/index', ['title' => 'Usuários']);}); // 'UserController@index'
 Route::get('/user/create', function () {return view('user/create', ['title' => 'Novo Usuário']);}); //  'UserController@create'
 Route::get('/user/{id}/edit', function ($id) {return view('user/edit', ['title' => 'Alterar Usuário']);}); //  'UserController@edit'
-Route::patch('/user/{id}', 'UserController@update');
-Route::delete('/user/{id}', 'UserController@destroy');
+Route::patch('/user/{id}', 'RegisterController@update');
+Route::delete('/user/{id}', 'RegisterController@destroy');
 
 
 Route::post('/category', 'CategoryController@store');
