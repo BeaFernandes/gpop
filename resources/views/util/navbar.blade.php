@@ -5,7 +5,7 @@
     </a>
     <nav class="nav">
       <a class="nav-link text-active" aria-current="page" href="{{ url('/') }}">POP's</a>
-      <a class="nav-link text-link" href="{{ url('/pop.create') }}">Criar POP</a>
+      <a class="nav-link text-link" href="{{ url('/pop/create') }}">Criar POP</a>
     </nav>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle text-text-bg-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

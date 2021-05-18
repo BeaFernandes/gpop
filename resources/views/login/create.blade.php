@@ -1,7 +1,7 @@
-@include('util.head')
+@include('util/head')
 
 <body>
-    @include('util.navbar')
+    @include('util/navbar')
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col col-sm-12 col-lg-8">

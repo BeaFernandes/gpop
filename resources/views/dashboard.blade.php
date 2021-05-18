@@ -1,7 +1,7 @@
-@include('util.head')
+@include('util/head')
 
 <body>
-    @include('util.navbar')
+    @include('util/navbar')
     <div class="container">
         <div class="row">
             <div class="col">
@@ -19,19 +19,19 @@
                         <th class="align-middle" scope="row">POP001</th>
                         <td class="align-middle">Lorem Ipsum</td>
                         <td class="align-middle">Lorem Ipsum</td>
-                        <td class="align-middle"><a href="{{ url('/pop.edit') }}"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></a></td>
+                        <td class="align-middle"><a href="{{ url('/pop/1/edit') }}"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></a></td>
                         </tr>
                         <tr>
                         <th class="align-middle" scope="row">POP002</th>
                         <td class="align-middle">Lorem Ipsum</td>
                         <td class="align-middle">Lorem Ipsum</td>
-                        <td class="align-middle"><a href="{{ url('/pop.edit') }}"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></a></td>
+                        <td class="align-middle"><a href="{{ url('/pop/2/edit') }}"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></a></td>
                         </tr>
                         <tr>
                         <th class="align-middle" scope="row">POP003</th>
                         <td class="align-middle">Lorem Ipsum</td>
                         <td class="align-middle">Lorem Ipsum</td>
-                        <td class="align-middle"><a href="{{ url('/pop.edit') }}"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></a></td>
+                        <td class="align-middle"><a href="{{ url('/pop/3/edit') }}"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></a></td>
                         </tr>
                     </tbody>
                 </table>
