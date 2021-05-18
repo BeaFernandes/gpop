@@ -23,7 +23,9 @@ Route::post('/pop', function () {
 Route::get('/pop.create', function () {
     return view('pop/create', ['title' => 'Novo POP']);
 });
-
+Route::get('/pop.edit', function () {
+    return view('pop/edit', ['title' => 'Alterar POP']);
+});
 
 
 

@@ -8,26 +8,30 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Título</th>
-                        <th scope="col">Categoria</th>
+                        <th class="align-middle" scope="col">ID</th>
+                        <th class="align-middle" scope="col">Título</th>
+                        <th class="align-middle" scope="col">Categoria</th>
+                        <th class="align-middle" scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        <th scope="row">POP001</th>
-                        <td>Lorem Ipsum</td>
-                        <td>Lorem Ipsum</td>
+                        <th class="align-middle" scope="row">POP001</th>
+                        <td class="align-middle">Lorem Ipsum</td>
+                        <td class="align-middle">Lorem Ipsum</td>
+                        <td class="align-middle"><a href="{{ url('/pop.edit') }}"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></a></td>
                         </tr>
                         <tr>
-                        <th scope="row">POP002</th>
-                        <td>Lorem Ipsum</td>
-                        <td>Lorem Ipsum</td>
+                        <th class="align-middle" scope="row">POP002</th>
+                        <td class="align-middle">Lorem Ipsum</td>
+                        <td class="align-middle">Lorem Ipsum</td>
+                        <td class="align-middle"><a href="{{ url('/pop.edit') }}"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></a></td>
                         </tr>
                         <tr>
-                        <th scope="row">POP003</th>
-                        <td>Lorem Ipsum</td>
-                        <td>Lorem Ipsum</td>
+                        <th class="align-middle" scope="row">POP003</th>
+                        <td class="align-middle">Lorem Ipsum</td>
+                        <td class="align-middle">Lorem Ipsum</td>
+                        <td class="align-middle"><a href="{{ url('/pop.edit') }}"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></a></td>
                         </tr>
                     </tbody>
                 </table>

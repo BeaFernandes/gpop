@@ -4,7 +4,7 @@
       <img src="{{ asset('img/logo.png') }}" alt="Logo GPOP" width="40">
     </a>
     <nav class="nav">
-      <a class="nav-link text-active" aria-current="page" href="{{ url('/') }}">POP's</a>
+      <a class="nav-link text-link" aria-current="page" href="{{ url('/') }}">POP's</a>
       <a class="nav-link text-link" href="{{ url('/pop.create') }}">Criar POP</a>
     </nav>
     <div class="dropdown">
