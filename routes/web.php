@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 Route::get('/', function () {return view('dashboard', ['title' => 'Dashboard']);}); // 'RaizController@index'
 
 
@@ -51,3 +52,26 @@ Route::get('/util/navbar', function () {return view('util/navbar', ['hasMenu' =>
 
 
 Route::get('/util/head', function () {return view('util/head');});
+=======
+Route::get('/', function () {
+    return view('dashboard', ['title' => 'Dashboard']);
+});
+
+Route::post('/pop', function () {
+    return view('save');
+});
+Route::get('/pop.create', function () {
+    return view('pop/create', ['title' => 'Novo POP']);
+});
+
+
+
+
+Route::get('/util.navbar', function () {
+    return view('util/navbar');
+});
+
+Route::get('/util.head', function () {
+    return view('util/head');
+});
+>>>>>>> cfa153d04f7b89fe5aed9d5fd34774feeb6164bd
