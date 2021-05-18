@@ -37,17 +37,14 @@ Route::delete('/user/{id}', 'UserController@destroy');
 
 
 Route::post('/category', 'CategoryController@store');
-Route::get('/category', 'CategoryController@index');
-Route::get('/category/create', 'CategoryController@create');
-Route::get('/category/{id}/edit', 'CategoryController@edit');
+Route::get('/category',  function () {return view('category/index', ['title' => 'Usuários']);}); // 'CategoryController@index');
+Route::get('/category/create', function () {return view('category/create', ['title' => 'Novo Categoria']);});// 'CategoryController@create');
+Route::get('/category/{id}/edit', function ($id) {return view('category/edit', ['title' => 'Alterar Categoria']);});// 'CategoryController@edit');
 Route::patch('/category/{id}', 'CategoryController@update');
 Route::delete('/category/{id}', 'CategoryController@destroy');
 
+Route::get('/parameter', function () {return view('parameter/index', ['title' => 'Usuários']);}); //'ParameterController@index');
+Route::post('/parameter', 'ParameterController@store');
+Route::patch('/parameter', 'ParameterController@update');
 
 Route::get('/report', 'ReportController@index');
-
-
-Route::get('/util/navbar', function () {return view('util/navbar', ['hasMenu' => 'true']);});
-
-
-Route::get('/util/head', function () {return view('util/head');});
