@@ -27,6 +27,13 @@ Route::get('/pop.edit', function () {
     return view('pop/edit', ['title' => 'Alterar POP']);
 });
 
+Route::get('/user.create', function () {
+    return view('user/create', ['title' => 'Novo Usuário']);
+});
+Route::get('/user.edit', function () {
+    return view('user/edit', ['title' => 'Alterar Usuário']);
+});
+
 
 
 Route::get('/util.navbar', function () {
