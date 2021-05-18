@@ -12,9 +12,8 @@
         <i class="fa fa-user text-text-bg-3 fs-4" aria-hidden="true"></i>
       </button>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><a class="dropdown-item" href="{{ url('login') }}">Login</a></li>
+        <li><a class="dropdown-item" href="{{ url('user/create') }}">Cadastrar</a></li>
       </ul>
     </div>
   </div>
