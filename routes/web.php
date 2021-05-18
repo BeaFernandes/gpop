@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('dashboard', ['title' => 'Dashboard']);
 });
 
+Route::get('/login', function () {
+    return view('login.create', ['title' => 'Login']);
+});
+
 Route::post('/pop', function () {
     return view('save');
 });
@@ -27,6 +31,10 @@ Route::get('/pop.edit', function () {
     return view('pop/edit', ['title' => 'Alterar POP']);
 });
 
+
+Route::get('/user', function () {
+    return view('user.index', ['title' => 'Usuários']);
+});
 Route::get('/user.create', function () {
     return view('user/create', ['title' => 'Novo Usuário']);
 });

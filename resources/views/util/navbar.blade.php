@@ -1,10 +1,10 @@
 <nav class="navbar navbar-light bg-text-bg-4 mb-5">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="{{ url('/') }}">
       <img src="{{ asset('img/logo.png') }}" alt="Logo GPOP" width="40">
     </a>
     <nav class="nav">
-      <a class="nav-link text-link" aria-current="page" href="{{ url('/') }}">POP's</a>
+      <a class="nav-link text-active" aria-current="page" href="{{ url('/') }}">POP's</a>
       <a class="nav-link text-link" href="{{ url('/pop.create') }}">Criar POP</a>
     </nav>
     <div class="dropdown">
