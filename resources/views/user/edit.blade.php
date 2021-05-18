@@ -5,7 +5,9 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col col-sm-12 col-lg-8">
-                <form action="" method="POST">
+                <form action="{{ url('/user/1') }}" method="post">
+                    <input type="hidden" name="_method" value="patch">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome*</label>
                         <input type="text" class="form-control text-text-bg-3" id="name" name="name" value="Lorem Ipsum" required>

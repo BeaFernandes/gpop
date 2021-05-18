@@ -5,7 +5,8 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col col-sm-12 col-lg-8">
-                <form action="" method="POST">
+                <form action="{{ url('/pop') }}" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="mb-3">
                         <label for="title" class="form-label">Título*</label>
                         <input type="text" class="form-control" id="title" name="title" required>
@@ -21,6 +22,7 @@
                         <label for="description" class="form-label">Descrição*</label>
                         <textarea class="form-control" id="description" rows="3" name="description" required></textarea>
                     </div>
+                        <label for="img" class="form-label">Upload de imagens</label>
                     <div class="input-group mb-3">
                         <input type="file" class="form-control" id="img">
                     </div>
@@ -32,6 +34,7 @@
                         <spam class="text-text-bg-3 fs-6">Campos com * são obrigatórios</spam>
                     </div>
                     <div class="text-end">
+                        <a href="{{ asset('/') }}" type="button" class="btn btn-highlight-4 text-text-bg-2 fw-bold" value="Lorem">Cancelar</a>
                         <button type="submit" class="btn btn-highlight-2 text-text-bg-2 fw-bold">Salvar</button>
                     </div>
                 </form>
