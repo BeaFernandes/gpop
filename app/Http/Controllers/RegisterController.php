@@ -83,7 +83,7 @@ class RegisterController extends Controller
             $isActive = 0;
         }
         
-        return User::create([
+        User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
@@ -91,5 +91,7 @@ class RegisterController extends Controller
             'admin' => $isAdmin,
             'active' => $isActive,
         ]);
+
+        return redirect('/');
     }
 }
