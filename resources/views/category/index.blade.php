@@ -24,35 +24,18 @@
                     </thead>
                     <tbody>
                         <tr>
-                        <th class="align-middle" scope="row">Impressora</th>
-                        <td class="align-middle">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus, quis magni. Omnis nobis eligendi voluptatibus aliquam, asperiores doloribus repellat exercitationem mollitia quia, impedit laboriosam ratione, a ullam quo voluptate dolore?</td>
-                        <td class="align-middle">
-                            <form action="{{ url('/category/1/edit') }}" method="get">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="dropdown-item"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></button>
-                            </form>
-                        </td> 
-                        </tr>
-                        <tr>
-                        <th class="align-middle" scope="row">Internet</th>
-                        <td class="align-middle"></td>
-                        <td class="align-middle">
-                            <form action="{{ url('/category/1/edit') }}" method="get">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="dropdown-item"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></button>
-                            </form>
-                        </td> 
-                        </tr>
-                        <tr>
-                        <th class="align-middle" scope="row">Acesso remoto</th>
-                        <td class="align-middle"></td>
-                        <td class="align-middle">
-                            <form action="{{ url('/category/1/edit') }}" method="get">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="dropdown-item"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></button>
-                            </form>
-                        </td> 
-                        </tr>
+                        @foreach($categories as $category)
+                            <tr>
+                            <th class="align-middle" scope="row">{{$category->title}}</th>
+                            <th class="align-middle" scope="row">{{$category->description}}</th>
+                            <td class="align-middle">
+                                <form action='{{ url("/user/$category->id/edit") }}' method="get">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></button>
+                                </form>
+                            </td>    
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

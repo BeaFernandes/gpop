@@ -38,7 +38,7 @@ Route::delete('/user/{id}', 'RegisterController@destroy');
 
 
 Route::post('/category', 'App\Http\Controllers\CategoryController@store')->name('categoryRegister');
-Route::get('/category',  function () {return view('category/index', ['title' => 'Usuários']);}); // 'CategoryController@index');
+Route::get('/category',  'App\Http\Controllers\CategoryController@index');
 Route::get('/category/create', function () {return view('category/create', ['title' => 'Novo Categoria']);});// 'CategoryController@create');
 Route::get('/category/{id}/edit', function ($id) {return view('category/edit', ['title' => 'Alterar Categoria']);});// 'CategoryController@edit');
 Route::patch('/category/{id}', 'CategoryController@update');
