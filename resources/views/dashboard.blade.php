@@ -16,7 +16,7 @@
                 </select>
             </form>
             <form action="{{ url('/pop/create') }}" method="get" class="col">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                @csrf
                 <button type="submit" class="btn btn-highlight-1 text-text-bg-2 fw-bold">Novo</button>
             </form>
         </div>
@@ -32,39 +32,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <th class="align-middle" scope="row">POP001</th>
-                        <td class="align-middle">Lorem Ipsum</td>
-                        <td class="align-middle">Lorem Ipsum</td>
-                        <td class="align-middle">
-                            <form action="{{ url('/pop/1/edit') }}" method="get">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="dropdown-item"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></button>
-                            </form>
-                        </td>    
-                        </tr>
-                        <tr>
-                        <th class="align-middle" scope="row">POP002</th>
-                        <td class="align-middle">Lorem Ipsum</td>
-                        <td class="align-middle">Lorem Ipsum</td>
-                        <td class="align-middle">
-                            <form action="{{ url('/pop/2/edit') }}" method="get">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="dropdown-item"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></button>
-                            </form>
-                        </td> 
-                        </tr>
-                        <tr>
-                        <th class="align-middle" scope="row">POP003</th>
-                        <td class="align-middle">Lorem Ipsum</td>
-                        <td class="align-middle">Lorem Ipsum</td>
-                        <td class="align-middle">
-                            <form action="{{ url('/pop/3/edit') }}" method="get">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="dropdown-item"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></button>
-                            </form>
-                        </td> 
-                        </tr>
+                        @foreach($pops as $pop)
+                            <tr>
+                            <th class="align-middle" scope="row">POP{{$pop->id}}</th>
+                            <td class="align-middle">{{ $pop->title }}</td>
+                            <td class="align-middle">{{ $pop->categories_id }}</td>
+                            <td class="align-middle">
+                                <form action='{{ url("/pop/$pop->id/edit") }}' method="get">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></button>
+                                </form>
+                            </td>    
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

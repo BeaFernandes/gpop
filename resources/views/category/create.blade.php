@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col col-sm-12 col-lg-8">
-                <form action="{{ url('/category') }}" method="post">
+                <form action="{{ route('categoryRegister') }}" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome*</label>

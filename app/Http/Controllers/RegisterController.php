@@ -42,6 +42,16 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('user/index', ['title' => 'Usuários'], ['users' => User::all()]);
+    }
     /**
      * Get a validator for an incoming registration request.
      *
@@ -92,6 +102,6 @@ class RegisterController extends Controller
             'active' => $isActive,
         ]);
 
-        return redirect('/');
+        return redirect('/user');
     }
 }

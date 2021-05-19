@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {return view('dashboard', ['title' => 'Dashboard']);}); // 'RaizController@index'
+Route::get('/', 'App\Http\Controllers\PopController@index'); 
 
 Auth::routes();
 
@@ -22,22 +22,22 @@ Route::post('/login', 'LoginController@store');
 Route::delete('/login', 'LoginController@destroy');
 
 
-Route::post('/pop', 'PopController@store');
-Route::get('/pop/create', function () {return view('pop/create', ['title' => 'Novo POP']);}); // 'PopController@create'
+Route::post('/pop', 'App\Http\Controllers\PopController@store')->name('popRegister');
+Route::get('/pop/create', 'App\Http\Controllers\PopController@create'); // 'PopController@create'
 Route::get('/pop/{id}/edit', function ($id) {return view('pop/edit', ['title' => 'Alterar POP']);}); //  'PopController@edit'
 Route::patch('/pop/{id}', 'PopController@update');
 Route::delete('/pop/{id}', 'PopController@destroy');
 
 
 Route::post('/user', 'App\Http\Controllers\RegisterController@store')->name('register');
-Route::get('/user', function () {return view('user/index', ['title' => 'Usuários']);}); // 'UserController@index'
+Route::get('/user', 'App\Http\Controllers\RegisterController@index');
 Route::get('/user/create', function () {return view('user/create', ['title' => 'Novo Usuário']);}); //  'UserController@create'
 Route::get('/user/{id}/edit', function ($id) {return view('user/edit', ['title' => 'Alterar Usuário']);}); //  'UserController@edit'
 Route::patch('/user/{id}', 'RegisterController@update');
 Route::delete('/user/{id}', 'RegisterController@destroy');
 
 
-Route::post('/category', 'CategoryController@store');
+Route::post('/category', 'App\Http\Controllers\CategoryController@store')->name('categoryRegister');
 Route::get('/category',  function () {return view('category/index', ['title' => 'Usuários']);}); // 'CategoryController@index');
 Route::get('/category/create', function () {return view('category/create', ['title' => 'Novo Categoria']);});// 'CategoryController@create');
 Route::get('/category/{id}/edit', function ($id) {return view('category/edit', ['title' => 'Alterar Categoria']);});// 'CategoryController@edit');

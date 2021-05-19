@@ -14,7 +14,7 @@ class PopController extends Controller
      */
     public function index()
     {
-        return view('pop.list', ['pop', Pop::all()]);
+        return view('dashboard', ['title' => 'Dashboard'], ['pops' => Pop::all()]);
     }
 
     /**
@@ -24,7 +24,7 @@ class PopController extends Controller
      */
     public function create()
     {
-        //
+        return view('pop/create', ['title' => 'Novo POP']);
     }
 
     /**
@@ -33,9 +33,18 @@ class PopController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $data)
     {
-        //
+        echo $data['category'];
+        Pop::create([
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'categories_id' => $data['category'],
+            'key_word' => $data['key-word'],
+            'image' => $data['img'],
+        ]);
+
+        return redirect('/');
     }
 
     /**

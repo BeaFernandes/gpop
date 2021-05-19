@@ -18,7 +18,7 @@ class CreatePopsTable extends Migration
             $table->string('title', 30);
             $table->string('key_word', 100);
             $table->string('description', 2000);
-            $table->string('image', 30);
+            $table->string('image', 30)->nullable();
             $table->foreignId('categories_id')->constrained();
             $table->timestamps();
         });

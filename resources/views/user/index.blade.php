@@ -20,43 +20,25 @@
                         <th class="align-middle" scope="col">Nome</th>
                         <th class="align-middle" scope="col">Admin</th>
                         <th class="align-middle" scope="col">Ativo</th>
+                        <th class="align-middle" scope="col">Permissão de escrita</th>
                         <th class="align-middle" scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <th class="align-middle" scope="row">Fulano</th>
-                        <td class="align-middle">Sim</td>
-                        <td class="align-middle">Sim</td>
-                        <td class="align-middle">
-                            <form action="{{ url('/user/1/edit') }}" method="get">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="dropdown-item"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></button>
-                            </form>
-                        </td> 
-                        </tr>
-                        <tr>
-                        <th class="align-middle" scope="row">Sicrano</th>
-                        <td class="align-middle">Não</td>
-                        <td class="align-middle">Sim</td>
-                        <td class="align-middle">
-                            <form action="{{ url('/user/1/edit') }}" method="get">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="dropdown-item"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></button>
-                            </form>
-                        </td> 
-                        </tr>
-                        <tr>
-                        <th class="align-middle" scope="row">Beltrano</th>
-                        <td class="align-middle">Não</td>
-                        <td class="align-middle">Não</td>
-                        <td class="align-middle">
-                            <form action="{{ url('/user/1/edit') }}" method="get">
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <button type="submit" class="dropdown-item"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></button>
-                            </form>
-                        </td> 
-                        </tr>
+                        @foreach($users as $user)
+                            <tr>
+                            <th class="align-middle" scope="row">{{$user->name}}</th>
+                            <td class="align-middle">{{ $user->admin ? 'Sim' : 'Não'}}</td>
+                            <td class="align-middle">{{ $user->active ? 'Sim' : 'Não' }}</td>
+                            <td class="align-middle">{{ $user->writePermission ? 'Sim' : 'Não' }}</td>
+                            <td class="align-middle">
+                                <form action='{{ url("/user/$user->id/edit") }}' method="get">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></button>
+                                </form>
+                            </td>    
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
