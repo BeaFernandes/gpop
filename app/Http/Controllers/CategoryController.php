@@ -24,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('category/create', ['title' => 'Novo Categoria']);
     }
 
     /**
@@ -36,7 +36,7 @@ class CategoryController extends Controller
     public function store(Request $data)
     {
         Category::create([
-            'title' => $data['title'],
+            'title' => $data['name'],
             'description' => $data['description'],
         ]);
 

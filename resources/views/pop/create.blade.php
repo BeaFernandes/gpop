@@ -14,9 +14,9 @@
                     <label for="category" class="form-label">Categoria*</label>
                     <select id="category" class="form-select mb-3" name="category" required>
                         <option selected>----</option>
-                        <option value="1">Impressora</option>
-                        <option value="2">Internet</option>
-                        <option value="3">Acesso remoto</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{$category->title}}</option>
+                        @endforeach
                     </select>
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrição*</label>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pop;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class PopController extends Controller
@@ -14,7 +15,8 @@ class PopController extends Controller
      */
     public function index()
     {
-        return view('dashboard', ['title' => 'Dashboard'], ['pops' => Pop::all()]);
+        return view('dashboard', ['title' => 'Dashboard'], ['pops' => Pop::all(),
+                                                            'categories' => Category::all()]);
     }
 
     /**
@@ -24,7 +26,7 @@ class PopController extends Controller
      */
     public function create()
     {
-        return view('pop/create', ['title' => 'Novo POP']);
+        return view('pop/create', ['title' => 'Novo POP'], ['categories' => Category::all()]);
     }
 
     /**
@@ -35,7 +37,6 @@ class PopController extends Controller
      */
     public function store(Request $data)
     {
-        echo $data['category'];
         Pop::create([
             'title' => $data['title'],
             'description' => $data['description'],
