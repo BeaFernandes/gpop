@@ -60,9 +60,10 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('category/edit', ['title' => 'Alterar categoria'], ['category' => $category]);
     }
 
     /**
@@ -72,9 +73,15 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(Request $data, $id)
     {
-        //
+        $category = Category::find($id);
+        $category->update([
+            'title' => $data['name'],
+            'description' => $data['description'],
+        ]);
+
+        return redirect('/category');
     }
 
     /**
@@ -83,8 +90,10 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category::destroy();
+        return redirect('/category');
     }
 }

@@ -29,7 +29,7 @@
                             <th class="align-middle" scope="row">{{$category->title}}</th>
                             <th class="align-middle" scope="row">{{$category->description}}</th>
                             <td class="align-middle">
-                                <form action='{{ url("/user/$category->id/edit") }}' method="get">
+                                <form action='{{ url("/category/$category->id/edit") }}' method="get">
                                     @csrf
                                     <button type="submit" class="dropdown-item"><i class="fa fa-eye text-highlight-1 fs-4 align-middle" aria-hidden="true"></i></button>
                                 </form>
