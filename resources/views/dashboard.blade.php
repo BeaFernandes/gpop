@@ -37,7 +37,7 @@
                             <tr>
                             <th class="align-middle" scope="row">POP{{$pop->id}}</th>
                             <td class="align-middle">{{ $pop->title }}</td>
-                            <td class="align-middle">{{ $pop->categories_id}}</td>
+                            <td class="align-middle">{{ $pop->getCategory()}}</td>
                             <td class="align-middle">
                                 <form action='{{ url("/pop/$pop->id/edit") }}' method="get">
                                     @csrf

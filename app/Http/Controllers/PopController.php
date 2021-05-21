@@ -65,9 +65,13 @@ class PopController extends Controller
      * @param  \App\Models\Pop  $pop
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pop $pop)
+    public function edit($id)
     {
-        //
+        $pop = Pop::find($id);
+        $category_selected = Category::find($pop->categories_id)->title;
+        return view('pop/edit', ['title' => 'Alterar Pop'], ['pop' => $pop, 
+                                                            'categories' => Category::all(),
+                                                            'category_selected' => $category_selected]);
     }
 
     /**
