@@ -14,9 +14,9 @@
                     </div>
                     <label for="category" class="form-label">Categoria*</label>
                     <select id="category" name="category" class="form-select mb-3" required>
-                        <option disabled selected>{{ $category_selected }}</option>
                         @foreach($categories as $category)
-                            <option value="{{ $category->id }}">{{$category->title}}</option>
+                            
+                            <option value="{{ $category->id }}" {{ $category->id == $pop->categories_id ? 'selected' : '' }}>{{$category->title}}</option>
                         @endforeach
                     </select>
                     <div class="mb-3">

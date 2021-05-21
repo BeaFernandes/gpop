@@ -25,8 +25,8 @@ Route::delete('/login', 'LoginController@destroy');
 Route::post('/pop', 'App\Http\Controllers\PopController@store')->name('popRegister');
 Route::get('/pop/create', 'App\Http\Controllers\PopController@create');
 Route::get('/pop/{id}/edit', 'App\Http\Controllers\PopController@edit');
-Route::patch('/pop/{id}', 'PopController@update');
-Route::delete('/pop/{id}', 'PopController@destroy');
+Route::patch('/pop/{id}', 'App\Http\Controllers\PopController@update');
+Route::delete('/pop/{id}', 'App\Http\Controllers\PopController@destroy');
 
 
 Route::post('/user', 'App\Http\Controllers\RegisterController@store')->name('register');

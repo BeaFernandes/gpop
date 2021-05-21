@@ -81,9 +81,18 @@ class PopController extends Controller
      * @param  \App\Models\Pop  $pop
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pop $pop)
+    public function update(Request $data, $id)
     {
-        //
+        $pop = Pop::find($id);
+        $pop->update([
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'categories_id' => $data['category'],
+            'key_word' => $data['key-word'],
+            'image' => $data['img'],
+        ]);
+
+        return redirect('/');
     }
 
     /**
