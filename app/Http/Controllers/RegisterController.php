@@ -124,7 +124,7 @@ class RegisterController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        return view('User/edit', ['title' => 'Alterar Usuário'], ['user' => $user]);
+        return view('user/edit', ['title' => 'Alterar Usuário'], ['user' => $user]);
     }
 
     public function update(Request $data, $id)

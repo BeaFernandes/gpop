@@ -19,6 +19,10 @@
                 @csrf
                 <button type="submit" class="btn btn-highlight-1 text-text-bg-2 fw-bold">Novo</button>
             </form>
+            <form action="{{ url('/report') }}" method="get" class="col">
+                @csrf
+                <button type="submit" class="btn btn-highlight-1 text-text-bg-2 fw-bold">Relatório</button>
+            </form>
         </div>
         <div class="row">
             <div class="col">

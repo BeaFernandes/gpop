@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col col-sm-12 col-lg-8">
-                <form action="{{ url('/category/1') }}" method="post">
+                <form action='{{ url("/category/$category->id") }}' method="post">
                     <input type="hidden" name="_method" value="patch">
                     @csrf
                     <div class="mb-3">
@@ -20,12 +20,7 @@
                         <spam class="text-text-bg-3 fs-6">Campos com * são obrigatórios</spam>
                     </div>
                     <div>
-                        <div class="text-end">
-                        <form action="{{ url('/category/1') }}" method="post">
-                        <input type="hidden" name="_method" value="delete">
-                            <button type="button" class="btn btn-highlight-4 text-text-bg-2 fw-bold" value="Lorem">Excluir</button><!-- TODO - verificar se é admin -->
-                        
-                        </form>
+                        <div class="text-end"><button type="button" class="btn btn-highlight-4 text-text-bg-2 fw-bold" value="Lorem">Excluir</button>
                             <button type="submit" class="btn btn-highlight-2 text-text-bg-2 fw-bold" value="Lorem">Salvar</button>
                         </div>
                     </div>

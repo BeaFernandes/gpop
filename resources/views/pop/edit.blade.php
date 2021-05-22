@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col col-sm-12 col-lg-8">
-                <form action="{{ url('/pop/1') }}" method="post" >
+                <form action='{{ url("/pop/$pop->id") }}' method="post" >
                     <input type="hidden" name="_method" value="patch">
                     @csrf
                     <div class="mb-3">
