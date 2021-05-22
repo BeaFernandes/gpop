@@ -10,11 +10,11 @@
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome*</label>
-                        <input type="text" class="form-control text-text-bg-3" id="name" name="name" value="Lorem Ipsum" required>
+                        <input type="text" class="form-control text-text-bg-3" id="name" name="name" value="{{ $user->name }}" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">E-mail*</label>
-                        <input type="text" class="form-control text-text-bg-3" id="email" name="email" value="Lorem Ipsum" required>
+                        <input type="text" class="form-control text-text-bg-3" id="email" name="email" value="{{ $user->email }}" required>
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Senha*</label>
@@ -22,15 +22,15 @@
                     </div>
                     <div class="form-check form-switch">
                         <label class="form-check-label" for="writePermission">Permissão de escrita</label>
-                        <input class="form-check-input" type="checkbox" id="writePermission" name="writePermission" checked>
+                        <input class="form-check-input" type="checkbox" id="writePermission" name="writePermission" {{ $user->writePermission ? 'checked' : '' }}>
                     </div>
                     <div class="form-check form-switch">
                         <label class="form-check-label" for="active">Usuário ativo</label>
-                        <input class="form-check-input" type="checkbox" id="active" name="active">
+                        <input class="form-check-input" type="checkbox" id="active" name="active" {{ $user->active ? 'checked' : '' }}>
                     </div>
                     <div class="form-check form-switch">
                         <label class="form-check-label" for="admin">Usuário administrador</label>
-                        <input class="form-check-input" type="checkbox" id="admin" name="admin">
+                        <input class="form-check-input" type="checkbox" id="admin" name="admin" {{ $user->admin ? 'checked' : '' }}>
                     </div>
                     <div class="mb-3 text-end">
                         <spam class="text-text-bg-3 fs-6">Campos com * são obrigatórios</spam>

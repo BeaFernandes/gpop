@@ -104,4 +104,59 @@ class RegisterController extends Controller
 
         return redirect('/user');
     }
+
+     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('user/create', ['title' => 'Novo Usuário'], ['users' => User::all()]);
+    }
+
+     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Pop  $pop
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $user = User::find($id);
+        return view('User/edit', ['title' => 'Alterar Usuário'], ['user' => $user]);
+    }
+
+    public function update(Request $data, $id)
+    {
+        if(isset($_POST['writePermission'])) {
+            $hasWritePermission = 1;
+        } else {
+            $hasWritePermission = 0;
+        }
+
+        if(isset($_POST['admin'])) {
+            $isAdmin = 1;
+        } else {
+            $isAdmin = 0;
+        }
+
+        if(isset($_POST['active'])) {
+            $isActive = 1;
+        } else {
+            $isActive = 0;
+        }
+
+        $user = User::find($id);
+        $user->update([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'writePermission' => $hasWritePermission,
+            'admin' => $isAdmin,
+            'active' => $isActive,
+        ]);
+
+        return redirect('/user');
+    }
 }
