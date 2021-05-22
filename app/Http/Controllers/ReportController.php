@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Record;
 use Illuminate\Http\Request;
+use App\Models\Pop;
+use App\Models\Report;
+use PDF;
 
-class RecordController extends Controller
+class ReportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,11 @@ class RecordController extends Controller
      */
     public function index()
     {
-        //
+        $pops = Pop::all();
+
+        $pdf = PDF::loadView('report/index', compact('pops'));
+
+        return $pdf->stream('teste');
     }
 
     /**
@@ -44,7 +50,7 @@ class RecordController extends Controller
      * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function show(Record $record)
+    public function show(Report $record)
     {
         //
     }
@@ -55,7 +61,7 @@ class RecordController extends Controller
      * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function edit(Record $record)
+    public function edit(Report $record)
     {
         //
     }
@@ -67,7 +73,7 @@ class RecordController extends Controller
      * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Record $record)
+    public function update(Request $request, Report $record)
     {
         //
     }
@@ -78,7 +84,7 @@ class RecordController extends Controller
      * @param  \App\Models\Record  $record
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Record $record)
+    public function destroy(Report $record)
     {
         //
     }

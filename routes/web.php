@@ -48,4 +48,4 @@ Route::get('/parameter', function () {return view('parameter/index', ['title' =>
 Route::post('/parameter', 'ParameterController@store');
 Route::patch('/parameter', 'ParameterController@update');
 
-Route::get('/report', 'ReportController@index');
+Route::get('/report', 'App\Http\Controllers\ReportController@index');
